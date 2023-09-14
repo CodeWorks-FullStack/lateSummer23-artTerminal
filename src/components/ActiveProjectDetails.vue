@@ -36,7 +36,7 @@ export default {
   return {
     activeProject: computed(()=> AppState.activeProject),
     closeModal(){
-       // NOTE how to close a model from code
+       // NOTE how to close a model from code. ⬇️ this is the modal's id
       const modal = Modal.getOrCreateInstance('#project-modal')
       modal.hide()
     }
@@ -47,6 +47,7 @@ export default {
 
 
 <style lang="scss" scoped>
+//REVIEW this might be really really useful in a couple weeks!
 .project-imgs{
   columns: 300px;
 }

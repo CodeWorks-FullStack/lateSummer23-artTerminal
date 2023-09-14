@@ -8,7 +8,7 @@
       </div>
       <div class="col-8">
         <h3>Edit Profile</h3>
-        <!-- NOTE IF ID DON'T GET TO IT, THAT DOESN'T MEAN YOUR FORMS SHOULD NOT HAVE VALIDATION I JUST RAN OUT OF TIME -->
+        <!-- NOTE IF I DON'T GET TO IT, THAT DOESN'T MEAN YOUR FORMS SHOULD NOT HAVE VALIDATION I JUST RAN OUT OF TIME -->
         <form @submit.prevent="editProfile" class="row">
           <div class="mb-2 col-6">
             <label for="">
@@ -48,7 +48,7 @@ import { AppState } from '../AppState';
 import Pop from '../utils/Pop.js';
 import { logger } from '../utils/Logger.js';
 import { accountService } from '../services/AccountService.js';
-import { useRoute, useRouter } from 'vue-router';
+import {  useRouter } from 'vue-router';
 export default {
   setup() {
     const editable = ref({})
@@ -59,6 +59,8 @@ export default {
       logger.log('watch ran', editable.value)
       AppState.account
       editable.value = AppState.account
+      // The above line will fill the form in with the information from the account
+      // don't forget to update your account model if you are trying to edit extra properties!
     })
 
     return {

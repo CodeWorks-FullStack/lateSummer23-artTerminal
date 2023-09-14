@@ -34,9 +34,10 @@ export default {
     projectCover: computed(()=> `url(${props.project.coverImg}`),
     setActiveProject(){
       projectsService.setActiveProject(props.project.id)
-      // NOTE how to open a model from the code
+      // NOTE how to open a model from the code. ⬇️ this is the modal's id
       const modal = Modal.getOrCreateInstance('#project-modal')
       modal.show()
+      // We needed to open the modal via the code this time so we can .stop (event propagation) on the user link, so the modal would not open when the profile link was clicked
     }
    }
   }
